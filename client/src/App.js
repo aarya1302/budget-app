@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import MyComponent from './components/firstComponent';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthPage from './components/AuthPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MyComponent />} />
+        <Route path="/about" element={<h1>About Page</h1>} />
+        {/* Add more routes as needed */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
