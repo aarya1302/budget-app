@@ -1,19 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-import MyComponent from './components/firstComponent';
-import React from 'react';
+import "./App.css";
+import Accounts from "./components/Accounts";
+import Transactions from "./components/Transactions";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AuthPage from './components/AuthPage';
+import "./styles/nav.css";
 
 function App() {
   return (
-  <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MyComponent />} />
-        <Route path="/about" element={<h1>About Page</h1>} />
-        {/* Add more routes as needed */}
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <div class="navbar">
+        <a class="active" href="/accounts">
+          Accounts
+        </a>
+        <a href="/transactions">Transactions</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/accounts" element={<Accounts />} />
+          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/transactions" element={<Transactions />} />
+          {/* Add more routes as needed */}
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
